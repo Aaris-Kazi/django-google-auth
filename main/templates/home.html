@@ -46,38 +46,40 @@
             <div class="col-9">
                 profile edit form
                 <div class="row">
-                    <div class="col align-self-center">
-                        <form action="#" method="post">
-                            {% csrf_token %}
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" disabled name='username' value = '{{ user.email }}'>
-                                <label for="floatingInput">Email address</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="john" name='fname' value = '{{ user.first_name }}'>
-                                <label for="floatingInput">First Name</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="doe" name='lname' value = '{{ user.last_name }}'>
-                                <label for="floatingInput">Last Name</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" height='10' placeholder="Mumbai" name='add'></textarea>
-                                {% comment %} <input type="text" class="form-control" id="floatingInput" placeholder="doe" name='lname' value = '{{ user.last_name }}'> {% endcomment %}
-                                <label for="floatingInput">ADDRESS</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="Mumbai" name='city'>
-                                <label for="floatingInput">CITY</label>
-                            </div>
-                              <div class="col align-self-center">
-                                <figure class="text-center">
-                                    <button type="submit" class="btn btn-primary mb-3">Submit</button>
-                                </figure>
-                            </div>
-                            
-                        </form>
-            </div>
+                    {% if user.is_authenticated  %}
+                        <div class="col align-self-center">
+                            <form action="{% url 'qr' %}" method="post">
+                                {% csrf_token %}
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name='username' value = '{{ user.email }}'>
+                                    <label for="floatingInput">Email address</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="john" name='fname' value = '{{ user.first_name }}'>
+                                    <label for="floatingInput">First Name</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="doe" name='lname' value = '{{ user.last_name }}'>
+                                    <label for="floatingInput">Last Name</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" height='10' placeholder="Mumbai" name='add'></textarea>
+                                    {% comment %} <input type="text" class="form-control" id="floatingInput" placeholder="doe" name='lname' value = '{{ user.last_name }}'> {% endcomment %}
+                                    <label for="floatingInput">ADDRESS</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Mumbai" name='city'>
+                                    <label for="floatingInput">CITY</label>
+                                </div>
+                                <div class="col align-self-center">
+                                    <figure class="text-center">
+                                        <button type="submit" class="btn btn-primary mb-3">Submit</button>
+                                    </figure>
+                                </div>  
+                            </form>
+                        </div>
+                    {% endif %}
+                    
             <div class="col-3">
                 {% if user.is_authenticated  %}
                     <div class="row"> 
@@ -89,8 +91,13 @@
                     
                     
                     <div class="row">
+                        <a href = "{% url 'secret' %}"><button type="button" class="btn btn-primary mb-3">Reveal Button</button></a>
                         <span class="border">
-                            1765-978-66
+                            {% if data %}
+                                {% for i in data %}
+                                    {{ i.unique_code }}
+                                {% endfor %}
+                            {% endif %}
                         </span>
                     </div>
                 {% endif %}
