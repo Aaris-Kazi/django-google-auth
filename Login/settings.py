@@ -48,6 +48,10 @@ INSTALLED_APPS = [
     # provider
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
+    #rest-api-response
+    'rest_framework',
+    'rest_response',
+
 ]
 
 MIDDLEWARE = [
