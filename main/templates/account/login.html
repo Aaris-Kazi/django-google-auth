@@ -63,13 +63,15 @@
                                 <small class="text-muted">Different way to Login</small>
                             </figcaption>
                             
-                            <a href = "{% provider_login_url "facebook" method= "oauth2" %}"><button type="button" class="btn btn-primary mb-3"><img src = 'https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico'> Facebook</button></a>
-                            <a href = "{% provider_login_url "google" method= "oauth2" %}"><button type="button" class="btn btn-primary mb-3"><img src = 'https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico'> GOOGLE</button></a>
+                            <a href = "{% provider_login_url "facebook" method= "oauth2" %}"><button type="button" class="btn btn-primary mb-3" style='background-color:385499;'><img src = 'https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico'> Facebook</button></a>
+                            <a href = "{% provider_login_url "google" method= "oauth2" %}"><button type="button" class="btn btn-primary mb-3" style="background-color:#1a73e8;"><img src = 'https://storage.googleapis.com/operating-anagram-8280/apple-touch-icon.png' height=32px> GOOGLE</button></a>
                             {% comment %} <a href = "http://127.0.0.1:8000/accounts/google/login/?process=login"><button type="button" class="btn btn-primary mb-3"><img src = 'https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico'>{% trans "Continue" %}</button></a> {% endcomment %}
                             {% comment %} <a href="{% provider_login_url "openid" openid="https://www.google.com/accounts/o8/id" next="/success/url/" %}">Google</a> {% endcomment %}
                             {% comment %} http://127.0.0.1:8000/accounts/google/login/?process=login {% endcomment %}
                         </figure>
                     </form>
+                    {% comment %} {% include 'socialaccount/login.html' %} {% endcomment %}
+                    
                 </div>
             </div>
         </div>
