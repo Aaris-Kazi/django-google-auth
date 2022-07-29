@@ -64,7 +64,7 @@
                             
                             <a href = "{% provider_login_url "facebook" method= "oauth2" %}"><button type="button" class="btn btn-primary mb-3"><img src = 'https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico'> Facebook</button></a>
                             <a href = "{% provider_login_url "google" method= "oauth2" %}"><button type="button" class="btn btn-primary mb-3"><img src = 'https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico'> GOOGLE</button></a>
-                            {% comment %} <a href = "http://127.0.0.1:8000/accounts/google/login/?process=login"><button type="button" class="btn btn-primary mb-3"><img src = 'https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico'> GOOGLE</button></a> {% endcomment %}
+                            {% comment %} <a href = "http://127.0.0.1:8000/accounts/google/login/?process=login"><button type="button" class="btn btn-primary mb-3"><img src = 'https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico'>{% trans "Continue" %}</button></a> {% endcomment %}
                             {% comment %} <a href="{% provider_login_url "openid" openid="https://www.google.com/accounts/o8/id" next="/success/url/" %}">Google</a> {% endcomment %}
                             {% comment %} http://127.0.0.1:8000/accounts/google/login/?process=login {% endcomment %}
                         </figure>
