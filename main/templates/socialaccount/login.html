@@ -20,46 +20,26 @@
     <div class="container content form">
         <figure class="text-center">
             <blockquote class="blockquote">
-                <h5>You are about to connect a new third party account from Google</h5>
+                <h5>{% blocktrans with provider.name as provider %}You are about to connect a new third party account from {{ provider }}.{% endblocktrans %}</h5>
             </blockquote>
         </figure>
         
             <div class="row">
                 <div class="text-center">
                     <img class="banner" src="{% static 'img/cover.webp' %}" alt="">
-                    <span class="material-symbols-outlined">
-                        key
-                    </span>
                     <form method="post">
-                        <button class="btn btn-primary mb-3" type="submit">Continue</button>
+                        {% csrf_token %}
+                        <button class="btn btn-primary mb-3" type="submit">
+                            
+                            <span class="text">
+                                {% trans "Continue" %}
+                            </span>
+                            
+                        </button>
                     </form> 
                 </div>
             </div>
-        
     </div>
     
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Continue Login</title>    
-    <!-- CSS only -->
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
-</head>
-<body>
-    <p>{% blocktrans with provider.name as provider %}You are about to connect a new third party account from {{ provider }}.{% endblocktrans %}</p>
-
-    <form method="post">
-        {% csrf_token %}
-        <button class="btn btn-primary mb-3" type="submit">{% trans "Continue" %}</button>
-    </form>    
 </body>
 </html>

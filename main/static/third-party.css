@@ -6,6 +6,7 @@
     border-radius: 5px;
 }
 .material-symbols-outlined {
+  margin-top: 5px;
   font-variation-settings:
   'FILL' 0,
   'wght' 400,
@@ -15,4 +16,6 @@
 .banner{
   height: 324px;
   width: 324px;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
