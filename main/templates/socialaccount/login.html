@@ -1,7 +1,45 @@
 {% load i18n %}
 {% load static %}
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'third-party.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
+    <title>Login Request</title>
+</head>
+<body>
+    <div class="container content form">
+        <figure class="text-center">
+            <blockquote class="blockquote">
+                <h5>You are about to connect a new third party account from Google</h5>
+            </blockquote>
+        </figure>
+        
+            <div class="row">
+                <div class="text-center">
+                    <img class="banner" src="{% static 'img/cover.webp' %}" alt="">
+                    <span class="material-symbols-outlined">
+                        key
+                    </span>
+                    <form method="post">
+                        <button class="btn btn-primary mb-3" type="submit">Continue</button>
+                    </form> 
+                </div>
+            </div>
+        
+    </div>
+    
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>

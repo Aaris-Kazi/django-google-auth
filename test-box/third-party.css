@@ -1,0 +1,18 @@
+.container.content.form{
+    margin-top: 7%;
+    display: block;
+    border: 1px  solid rgb(163, 163, 255);
+    max-width: 350px;
+    border-radius: 5px;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+.banner{
+  height: 324px;
+  width: 324px;
+}
